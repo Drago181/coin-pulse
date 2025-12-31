@@ -1,9 +1,3 @@
-import Image from 'next/image'
-import DataTable from "@/components/DataTable";
-import Link from "next/link";
-import { cn, formatCurrency } from "@/lib/utils";
-import {TrendingDown, TrendingUp} from "lucide-react";
-import {fetcher} from "@/lib/coingecko.actions";
 import {Suspense} from "react";
 import CoinOverview from "@/components/home/CoinOverview";
 import TrendingCoins from "@/components/home/TrendingCoins";
