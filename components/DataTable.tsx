@@ -2,8 +2,17 @@
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {cn} from "@/lib/utils";
 
-const DataTable = <T,>({ columns, data, rowKey, tableClassName, headerClassName,
-                   headerRowClassName, headerCellClassName, bodyRowClassName, bodyCellClassName }: DataTableProps<T>) => {
+const DataTable = <T,>({
+   columns,
+   data,
+   rowKey,
+   tableClassName,
+   headerClassName,
+   headerRowClassName,
+   headerCellClassName,
+   bodyRowClassName,
+   bodyCellClassName
+}: DataTableProps<T>) => {
     return (
         <Table className={cn('custom-scroll-bar', tableClassName)}>
             <TableHeader className={headerClassName}>
