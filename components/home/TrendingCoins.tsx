@@ -3,7 +3,7 @@ import DataTable from "@/components/DataTable";
 import {fetcher} from "@/lib/coingecko.actions";
 import Link from "next/link";
 import Image from "next/image";
-import {cn, formatCurrency} from "@/lib/utils";
+import {cn, formatCurrency, formatPercentage} from "@/lib/utils";
 import {TrendingDown, TrendingUp} from "lucide-react";
 
 const TrendingCoins = async () => {
@@ -37,12 +37,14 @@ const TrendingCoins = async () => {
                     const isTrendingUp = change > 0;
                     return (
                         <div className={cn('flex items-center gap-2', isTrendingUp ? 'text-green-500' : 'text-red-500')}>
-                            {isTrendingUp ? (
-                                <TrendingUp width={16} height={16} />
-                            ) : (
-                                <TrendingDown width={16} height={16} />
-                            )}
-                            <span>{Math.abs(change).toFixed(2)}%</span>
+                            <p className='flex items-center'>
+                                {formatPercentage(change)}
+                                {isTrendingUp ? (
+                                    <TrendingUp width={16} height={16} />
+                                ) : (
+                                    <TrendingDown width={16} height={16} />
+                                )}
+                            </p>
                         </div>
                     );
                 },
