@@ -13,7 +13,7 @@ import React from 'react'
 import {useRouter} from "next/navigation";
 import {buildPageNumbers, cn, ELLIPSIS} from "@/lib/utils";
 
-const CoinsPagination = ({ currentPage, totalPages, hasMorePages}: Pagination) => {
+const CoinsPagination = ({ currentPage, totalPages, hasMorePages}: PaginationProps) => {
     const router  = useRouter();
 
     const handlePageChange = (page: number) => {
